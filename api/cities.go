@@ -2,7 +2,6 @@ package handler
 
 import (
 	"database/sql"
-	"fmt"
 	"log"
 	_ "github.com/go-sql-driver/mysql"
     "net/http"
@@ -44,6 +43,6 @@ func Handler(w http.ResponseWriter, r *http.Request) {
         if erro != nil {
             log.Fatal(err)
         }
-	    w.Body(e)
+	    w.Write(e)
 	}
 }
