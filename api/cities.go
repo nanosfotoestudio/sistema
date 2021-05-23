@@ -30,7 +30,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Fatal(err)
 	}
-
+    var array []City
 	for res.Next() {
 
 		var city City
@@ -43,7 +43,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
         if erro != nil {
             log.Fatal(err)
         }
-
+        a = append(a, city)
 	}
-	w.Write(res)
+	w.Write(a)
 }
