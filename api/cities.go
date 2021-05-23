@@ -40,7 +40,10 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			log.Fatal(err)
 		}
-        e, error := json.Marshal(city)
+        e, erro := json.Marshal(city)
+        if erro != nil {
+            log.Fatal(err)
+        }
 		fmt.Fprintf(w,string(e))
 	}
 }
