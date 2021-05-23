@@ -40,6 +40,6 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 			log.Fatal(err)
 		}
 
-		fmt.Fprintf(w, city)
+		fmt.Fprintf(w,"%v\n", city)
 	}
 }
