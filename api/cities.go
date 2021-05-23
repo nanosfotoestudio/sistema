@@ -38,9 +38,6 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			log.Fatal(err)
 		}
-        if erro != nil {
-            log.Fatal(err)
-        }
         array = append(array, city)
 	}
 	w.Write(array)
