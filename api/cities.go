@@ -44,6 +44,6 @@ func Handler(w http.ResponseWriter, r *http.Request) {
             log.Fatal(err)
         }
 	    w.Write(e)
-	    break;
 	}
+	w.Write("{hola:hola}")
 }
