@@ -14,7 +14,7 @@ type City struct {
 	Population int
 }
 
-func main() {
+func Main() {
 
 	db, err := sql.Open("mysql", "admins:adminadmin@covid.cqjzeynatuei.us-east-2.rds.amazonaws.com:3306/test")
 	defer db.Close()
