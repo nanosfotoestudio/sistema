@@ -13,7 +13,7 @@ type City struct {
 	Population int
 }
 
-func main() {
+func Rain() {
 
 	db, err := sql.Open("mysql", "admin:adminadmin@tcp(covid.cqjzeynatuei.us-east-2.rds.amazonaws.com:3306)/test")
 	defer db.Close()
@@ -39,6 +39,6 @@ func main() {
 			log.Fatal(err)
 		}
 
-		fmt.Printf("%v\n", city)
+		fmt.Fprintf("%v\n", city)
 	}
 }
