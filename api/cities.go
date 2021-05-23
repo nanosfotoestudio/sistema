@@ -20,6 +20,7 @@ func main() {
 	defer db.Close()
 
 	if err != nil {
+		log.Fatal(err)
 	}
 
 	res, err := db.Query("SELECT * FROM cities")
@@ -27,6 +28,7 @@ func main() {
 	defer res.Close()
 
 	if err != nil {
+		log.Fatal(err)
 	}
 
 	for res.Next() {
@@ -35,6 +37,7 @@ func main() {
 		err := res.Scan(&city.Id, &city.Name, &city.Population)
 
 		if err != nil {
+			log.Fatal(err)
 		}
 
 		fmt.Fprintf("%v\n", city)
