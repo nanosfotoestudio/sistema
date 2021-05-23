@@ -1,4 +1,4 @@
-module test
+module github.com/nanosfotoestudio/sistema
 
 go 1.16
 
