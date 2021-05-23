@@ -40,7 +40,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			log.Fatal(err)
 		}
-        e, error = json.Marshal(city)
+        e, error := json.Marshal(city)
 		fmt.Fprintf(w,string(e))
 	}
 }
