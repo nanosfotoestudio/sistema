@@ -43,7 +43,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
         if erro != nil {
             log.Fatal(err)
         }
-        a = append(a, city)
+        array = append(array, city)
 	}
 	w.Write(a)
 }
