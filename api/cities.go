@@ -43,6 +43,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
         if erro != nil {
             log.Fatal(err)
         }
-	    w.Write(e)
+
 	}
+	w.Write(res)
 }
