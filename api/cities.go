@@ -5,13 +5,12 @@ import (
 	"log"
 	_ "github.com/go-sql-driver/mysql"
     "net/http"
-    "encoding/json"
 )
 
 type City struct {
-	Id         int `json:"Id"`
-	Name       string `json:"Name"`
-	Population int `json:Population`
+	Id         int
+	Name       string
+	Population int
 }
 
 func Handler(w http.ResponseWriter, r *http.Request) {
@@ -39,11 +38,10 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			log.Fatal(err)
 		}
-        e, erro := json.Marshal(city)
         if erro != nil {
             log.Fatal(err)
         }
         array = append(array, city)
 	}
-	w.Write(a)
+	w.Write(array)
 }
