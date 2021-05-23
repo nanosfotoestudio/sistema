@@ -6,12 +6,13 @@ import (
 	"log"
 	_ "github.com/go-sql-driver/mysql"
     "net/http"
+    "encoding/json"
 )
 
 type City struct {
-	Id         int
-	Name       string
-	Population int
+	Id         int `json:"Id"`
+	Name       string `json:"Name"`
+	Population int `json:Population`
 }
 
 func Handler(w http.ResponseWriter, r *http.Request) {
@@ -39,7 +40,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			log.Fatal(err)
 		}
-
-		fmt.Fprintf(w,"%v\n", city)
+        e, error = json.Marshal(city)
+		fmt.Fprintf(w,string(e))
 	}
 }
