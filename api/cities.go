@@ -4,7 +4,6 @@ import (
 	"database/sql"
 	"fmt"
 	"log"
-
 	_ "github.com/go-sql-driver/mysql"
 )
 
@@ -14,9 +13,9 @@ type City struct {
 	Population int
 }
 
-func Main() {
+func main() {
 
-	db, err := sql.Open("mysql", "admins:adminadmin@covid.cqjzeynatuei.us-east-2.rds.amazonaws.com:3306/test")
+	db, err := sql.Open("mysql", "admin:adminadmin@tcp(covid.cqjzeynatuei.us-east-2.rds.amazonaws.com:3306)/test")
 	defer db.Close()
 
 	if err != nil {
@@ -40,6 +39,6 @@ func Main() {
 			log.Fatal(err)
 		}
 
-		fmt.Fprintf("%v\n", city)
+		fmt.Printf("%v\n", city)
 	}
 }
