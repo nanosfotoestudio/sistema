@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	_ "github.com/go-sql-driver/mysql"
+    "net/http"
 )
 
 type City struct {
@@ -13,7 +14,7 @@ type City struct {
 	Population int
 }
 
-func Rain() {
+func Main(w http.ResponseWriter, r *http.Request) {
 
 	db, err := sql.Open("mysql", "admin:adminadmin@tcp(covid.cqjzeynatuei.us-east-2.rds.amazonaws.com:3306)/test")
 	defer db.Close()
