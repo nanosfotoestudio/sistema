@@ -1,26 +1,10 @@
 import { useRouter } from 'next/router';
-
-export default function User({ fecha }) {
+import useSWR from 'swr';
+const fetcher = url => fetch(url).then(r => r.json());
+export default function User({  }) {
   const router = useRouter();
   const { id } = router.query;
-
-  return <h1>Hello {id} created at {fecha}</h1>
+  const { data, error } = useSWR('/api/hello', fetcher)
+  console.log(data);
+  return <h1>Hello created at </h1>
 }
-
-export async function getStaticProps() {
-  return {
-    props: { fecha: Date.now() }
-  }
-}
-
-export async function getStaticPaths({ params }) {
-  const ga = [1, 2, 3]
-  const datos = ga.map( ga => {
-    return { params: { id: ga } }
-  })
-  return {
-    paths : ['/users/ga'],
-    fallback: false
-  };
-}
-

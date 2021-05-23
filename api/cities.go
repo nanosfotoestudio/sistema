@@ -44,6 +44,6 @@ func Handler(w http.ResponseWriter, r *http.Request) {
         if erro != nil {
             log.Fatal(err)
         }
-		fmt.Fprintf(w,string(e))
+	    w.Body(e)
 	}
 }
